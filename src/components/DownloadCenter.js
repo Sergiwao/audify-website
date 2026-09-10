@@ -15,9 +15,12 @@ export default function DownloadCenter() {
     setDownloadSuccess(false);
 
     try {
+      // Lien direct vers la Release GitHub v0.1.0
+      const releaseUrl = 'https://github.com/Sergiwao/audify-website/releases/download/v0.1.0/Audify-Setup-0.1.0.exe';
       const link = document.createElement('a');
-      link.href = '/downloads/Audify-Setup-0.1.0.exe';
+      link.href = releaseUrl;
       link.setAttribute('download', 'Audify-Setup-0.1.0.exe');
+      link.target = '_blank';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
