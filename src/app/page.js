@@ -14,26 +14,29 @@ import Footer from '@/components/Footer';
 export default function Home() {
   useEffect(() => {
     const purgeNetlifyBadge = () => {
+      // 1. Remove by explicit CSS selectors
       const selectors = [
         '[class*="netlify"]',
         '[id*="netlify"]',
         '[data-netlify-badge]',
         '[data-netlify-drawer]',
-        'a[href*="netlify.com"]',
+        '[data-netlify-feedback]',
         'a[href*="netlify"]',
         'iframe[src*="netlify"]',
         '.netlify-badge',
-        '.netlify-feedback-button'
+        '.netlify-feedback-button',
+        '#netlify-badge'
       ];
       selectors.forEach(selector => {
         document.querySelectorAll(selector).forEach(el => el.remove());
       });
 
-      // Target fixed bottom right elements containing netlify text
-      document.querySelectorAll('div, iframe, a').forEach(el => {
-        if (el.textContent && el.textContent.toLowerCase().includes('netlify')) {
+      // 2. Scan all elements for "Powered by Netlify" or "Netlify" at fixed positions
+      document.querySelectorAll('div, a, iframe, span, button').forEach(el => {
+        const text = (el.textContent || '').toLowerCase();
+        if (text.includes('netlify')) {
           const style = window.getComputedStyle(el);
-          if (style.position === 'fixed' || style.position === 'absolute') {
+          if (style.position === 'fixed' || style.position === 'absolute' || el.style.position === 'fixed') {
             el.remove();
           }
         }
@@ -41,9 +44,14 @@ export default function Home() {
     };
 
     purgeNetlifyBadge();
+    const interval = setInterval(purgeNetlifyBadge, 250);
     const observer = new MutationObserver(purgeNetlifyBadge);
     observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
+
+    return () => {
+      clearInterval(interval);
+      observer.disconnect();
+    };
   }, []);
 
   const scrollToDownload = () => {

@@ -23,7 +23,7 @@ export default function Footer() {
               La solution logicielle de référence pour la gestion des missions d'audit et de commissariat aux comptes en Afrique de l'Ouest et du Centre (Zone OHADA).
             </p>
             <div className="pt-2 text-[11px] text-gray-300 font-mono">
-              ⚡ Build v0.2.0 • Standalone Edition
+              Build v0.2.0 • Standalone Edition
             </div>
           </div>
 
@@ -60,11 +60,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-emerald-400" />
-                <span>+221 77 000 00 00 / WhatsApp</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-amber-400" />
-                <span>Dakar • Abidjan • Douala</span>
+                <span>+226 60 27 74 03 / WhatsApp</span>
               </div>
             </div>
           </div>

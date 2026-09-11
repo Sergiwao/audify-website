@@ -83,22 +83,23 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent;
 }
 
-/* Hide any auto-injected Netlify badge, drawer or watermark */
-[class*="netlify"],
-[id*="netlify"],
+/* Nuclear Netlify Watermark Removal */
+[id*="netlify" i],
+[class*="netlify" i],
 [data-netlify-badge],
 [data-netlify-drawer],
 [data-netlify-feedback],
-iframe[src*="netlify"],
+iframe[src*="netlify" i],
+a[href*="netlify.com" i],
+a[href*="netlify" i],
 .netlify-badge,
 .netlify-feedback-button,
-a[href*="netlify.com"],
-a[href*="netlify"],
-div:has(> a[href*="netlify.com"]),
-div[style*="position: fixed"][style*="bottom"][style*="right"],
-div[style*="position:fixed"][style*="bottom"][style*="right"],
 #netlify-badge,
-.netlify-container {
+.netlify-container,
+div:has(a[href*="netlify" i]),
+div:has(img[alt*="Netlify" i]),
+body > div[style*="fixed"][style*="bottom"],
+body > div[style*="fixed"][style*="right"] {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
@@ -113,5 +114,6 @@ div[style*="position:fixed"][style*="bottom"][style*="right"],
   top: -9999px !important;
   left: -9999px !important;
   clip: rect(0, 0, 0, 0) !important;
+  z-index: -9999 !important;
 }
 
