@@ -1,0 +1,38 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+<<<<<<< HEAD
+# binaries
+*.exe
+/public/downloads/*.exe
+
+=======
+>>>>>>> 43d56e2 (Fix exact release asset URL Audify.Setup.0.1.0.exe)
+
