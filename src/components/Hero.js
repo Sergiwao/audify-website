@@ -4,19 +4,14 @@ import { Download, Sparkles, Shield, WifiOff, FileCheck2, CreditCard, ChevronRig
 
 export default function Hero({ onDownloadClick }) {
   return (
-    <section className="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden bg-radial-gradient">
+    <section className="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden bg-gray-950">
       
-      {/* Background Decorative Glow Elements */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-brand-600/20 rounded-full blur-[140px] pointer-events-none"></div>
-      <div className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-emerald-500/15 rounded-full blur-[120px] pointer-events-none"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Announcement Pill */}
         <div className="flex justify-center">
-          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-panel border border-brand-500/30 text-brand-300 text-xs sm:text-sm font-medium shadow-xl hover:border-brand-500/50 transition-all cursor-pointer">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-brand-300 text-xs sm:text-sm font-medium hover:border-slate-700 transition-all cursor-pointer">
             <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span className="font-semibold text-white">Nouveau dans Audify v0.1.0 :</span>
@@ -42,9 +37,9 @@ export default function Hero({ onDownloadClick }) {
             {/* Primary CTA - Windows Installer Download */}
             <button
               onClick={onDownloadClick}
-              className="w-full sm:w-auto group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-2xl text-white bg-gradient-to-r from-brand-600 via-brand-500 to-emerald-500 shadow-2xl shadow-brand-500/30 hover:shadow-emerald-500/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer"
+              className="w-full sm:w-auto group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-2xl text-white bg-gradient-to-r from-brand-600 to-emerald-600 border border-brand-500 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
             >
-              <Download className="w-5 h-5 mr-3 animate-bounce" />
+              <Download className="w-5 h-5 mr-3" />
               <div className="text-left">
                 <div className="text-sm font-extrabold">Télécharger pour Windows</div>
                 <div className="text-[11px] font-normal text-brand-100 opacity-90">v0.1.0 (.exe - 64 bits)</div>
@@ -57,7 +52,7 @@ export default function Hero({ onDownloadClick }) {
               href="http://localhost:3000/login"
               target="_blank"
               rel="noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-2xl text-gray-200 bg-gray-900/90 hover:bg-gray-800 border border-gray-700/80 hover:border-brand-500/50 shadow-lg transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-2xl text-gray-200 bg-gray-900 hover:bg-gray-800 border border-gray-800 transition-all duration-200"
             >
               <Laptop className="w-5 h-5 mr-3 text-brand-400" />
               <span>Accéder au Portail Web</span>
@@ -84,10 +79,7 @@ export default function Hero({ onDownloadClick }) {
         {/* Desktop UI Interactive Floating Mockup Preview */}
         <div className="mt-14 relative max-w-5xl mx-auto">
           
-          {/* Outer Ambient Glow */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-brand-600 via-emerald-500 to-indigo-600 rounded-3xl blur-xl opacity-35 animate-pulse-slow"></div>
-          
-          <div className="relative glass-panel rounded-2xl p-3 sm:p-4 border border-gray-700/70 shadow-2xl overflow-hidden">
+          <div className="relative glass-panel rounded-2xl p-3 sm:p-4 border border-gray-800 overflow-hidden">
             
             {/* Mockup Window Header */}
             <div className="flex items-center justify-between px-3 py-2 border-b border-gray-800 bg-gray-950/80 rounded-t-xl">

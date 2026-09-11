@@ -10,37 +10,7 @@ export default function DownloadCenter() {
 
   const sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
 
-  const handleDownload = () => {
-    setDownloading(true);
-    setDownloadSuccess(false);
-
-    try {
-<<<<<<< HEAD
-      // Lien direct vers la Release GitHub v0.1.0
-      const releaseUrl = 'https://github.com/Sergiwao/audify-website/releases/download/v0.1.0/Audify-Setup-0.1.0.exe';
-      const link = document.createElement('a');
-      link.href = releaseUrl;
-      link.setAttribute('download', 'Audify-Setup-0.1.0.exe');
-=======
-      const releaseUrl = 'https://github.com/Sergiwao/audify-website/releases/download/v0.1.0/Audify.Setup.0.1.0.exe';
-      const link = document.createElement('a');
-      link.href = releaseUrl;
-      link.setAttribute('download', 'Audify.Setup.0.1.0.exe');
->>>>>>> 43d56e2 (Fix exact release asset URL Audify.Setup.0.1.0.exe)
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      setTimeout(() => {
-        setDownloading(false);
-        setDownloadSuccess(true);
-      }, 800);
-    } catch {
-      setDownloading(false);
-      setDownloadSuccess(true);
-    }
-  };
+  const releaseUrl = 'https://github.com/Sergiwao/audify-website/releases/download/v0.1.0/Audify.Setup.0.1.0.exe';
 
   const copyHash = () => {
     navigator.clipboard.writeText(sha256);
@@ -51,13 +21,10 @@ export default function DownloadCenter() {
   return (
     <section id="download" className="py-20 bg-gray-950 relative overflow-hidden">
       
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-brand-600/15 rounded-full blur-[160px] pointer-events-none"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-brand-400 border border-slate-800 text-xs font-semibold uppercase tracking-wider">
             <Download className="w-3.5 h-3.5" />
             Centre de Téléchargement Officiel
           </div>
@@ -71,13 +38,13 @@ export default function DownloadCenter() {
         </div>
 
         {/* Download Main Box */}
-        <div className="mt-12 max-w-4xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-gray-700/80 shadow-2xl relative overflow-hidden">
+        <div className="mt-12 max-w-4xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 relative overflow-hidden">
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
             <div className="md:col-span-7 space-y-6">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-600 to-emerald-500 p-0.5 shadow-lg">
+                <div className="w-12 h-12 rounded-2xl bg-slate-800 p-0.5 border border-slate-700">
                   <div className="w-full h-full bg-gray-950 rounded-[14px] flex items-center justify-center">
                     <ShieldCheck className="w-6 h-6 text-brand-400" />
                   </div>
@@ -121,29 +88,24 @@ export default function DownloadCenter() {
 
             {/* Download CTA Panel */}
             <div className="md:col-span-5 flex flex-col items-center justify-center p-6 bg-gray-950/80 rounded-2xl border border-gray-800 text-center space-y-4">
-              <div className="w-16 h-16 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 shadow-inner">
+              <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-brand-400">
                 <Monitor className="w-8 h-8" />
               </div>
 
               <div>
                 <div className="text-sm font-bold text-white">Windows 10 / 11</div>
-                <div className="text-xs text-gray-400 mt-0.5">Taille du fichier : ~68.4 Mo</div>
+                <div className="text-xs text-gray-400 mt-0.5">Taille du fichier : ~285 Mo</div>
               </div>
 
-              <button
-                onClick={handleDownload}
-                disabled={downloading}
-                className="w-full py-4 px-6 rounded-xl font-extrabold text-sm text-white bg-gradient-to-r from-brand-600 via-brand-500 to-emerald-500 shadow-xl shadow-brand-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
+              <a
+                href={releaseUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 px-6 rounded-xl font-extrabold text-sm text-white bg-gradient-to-r from-brand-600 to-emerald-600 border border-brand-500 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                {downloading ? (
-                  <span>Lancement du téléchargement...</span>
-                ) : (
-                  <>
-                    <Download className="w-4 h-4" />
-                    <span>Télécharger l'Installateur (.exe)</span>
-                  </>
-                )}
-              </button>
+                <Download className="w-4 h-4" />
+                <span>Télécharger l'Installateur (.exe)</span>
+              </a>
 
               {downloadSuccess && (
                 <div className="text-xs text-emerald-400 font-semibold bg-emerald-950/80 border border-emerald-800/60 px-3 py-2 rounded-xl w-full">

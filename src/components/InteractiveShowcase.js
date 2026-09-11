@@ -11,16 +11,16 @@ export default function InteractiveShowcase({ onDownloadClick }) {
     { id: 'ged', label: 'GED & Tableur Intégré', icon: FileSpreadsheet },
     { id: 'dashboard', label: 'Tableau de Bord & KPIs', icon: LayoutDashboard },
     { id: 'reports', label: 'Rapports PDF & Anomalies', icon: FileCheck },
-    { id: 'licence', label: 'Licences & Mobile Money', icon: Smartphone },
+    { id: 'licence', label: 'Gestion des Licences & Accès', icon: Smartphone },
   ];
 
   return (
-    <section id="showcase" className="py-20 bg-gray-950/80 border-t border-gray-800/80 relative">
+    <section id="showcase" className="py-20 bg-gray-950 border-t border-gray-800 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-emerald-400 border border-slate-800 text-xs font-semibold uppercase tracking-wider">
             Aperçu Fonctionnel En Direct
           </div>
           <h2 className="mt-4 text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
@@ -43,11 +43,11 @@ export default function InteractiveShowcase({ onDownloadClick }) {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center space-x-2 px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-200 ${
                   isActive
-                    ? 'bg-gradient-to-r from-brand-600 to-emerald-600 text-white shadow-lg shadow-brand-500/25 scale-[1.02]'
+                    ? 'bg-slate-800 text-white border border-slate-700'
                     : 'bg-gray-900 text-gray-400 hover:text-white hover:bg-gray-800 border border-gray-800'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-gray-400'}`} />
+                <Icon className={`w-4 h-4 ${isActive ? 'text-brand-400' : 'text-gray-400'}`} />
                 <span>{tab.label}</span>
               </button>
             );
