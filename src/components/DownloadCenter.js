@@ -10,7 +10,7 @@ export default function DownloadCenter() {
 
   const sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
 
-  const releaseUrl = 'https://github.com/Sergiwao/audify-website/releases/download/v0.1.0/Audify.Setup.0.1.0.exe';
+  const releaseUrl = 'https://github.com/Sergiwao/audify-website/releases/download/v0.2.1/Audify.Setup.0.2.1.exe';
 
   const copyHash = () => {
     navigator.clipboard.writeText(sha256);
@@ -51,7 +51,7 @@ export default function DownloadCenter() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white font-heading">Audify Desktop pour Windows</h3>
-                  <p className="text-xs text-emerald-400 font-medium">v0.1.0 Build Officielle • 64-bit</p>
+                  <p className="text-xs text-emerald-400 font-medium">v0.2.1 Build Officielle • 64-bit</p>
                 </div>
               </div>
 
